@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start:angpwa": "ng serve angpwa --port=4201",
+    "build:angpwa": "ng build angpwa",
+    "test:angpwa": "ng test angpwa",
+    "lint:angpwa": "ng lint angpwa",
+    "e2e:angpwa": "ng e2e angpwa"
   },
   "private": true,
   "dependencies": {
