@@ -5,5 +5,127 @@
     "packageManager": "yarn"
   },
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "angpwa": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "projects/angpwa",
+      "sourceRoot": "projects/angpwa/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angpwa",
+            "index": "projects/angpwa/src/index.html",
+            "main": "projects/angpwa/src/main.ts",
+            "polyfills": "projects/angpwa/src/polyfills.ts",
+            "tsConfig": "projects/angpwa/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/angpwa/src/favicon.ico",
+              "projects/angpwa/src/assets"
+            ],
+            "styles": [
+              "projects/angpwa/src/styles.sass"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/angpwa/src/environments/environment.ts",
+                  "with": "projects/angpwa/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angpwa:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angpwa:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angpwa:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angpwa/src/test.ts",
+            "polyfills": "projects/angpwa/src/polyfills.ts",
+            "tsConfig": "projects/angpwa/tsconfig.spec.json",
+            "karmaConfig": "projects/angpwa/karma.conf.js",
+            "assets": [
+              "projects/angpwa/src/favicon.ico",
+              "projects/angpwa/src/assets"
+            ],
+            "styles": [
+              "projects/angpwa/src/styles.sass"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angpwa/tsconfig.app.json",
+              "projects/angpwa/tsconfig.spec.json",
+              "projects/angpwa/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/angpwa/e2e/protractor.conf.js",
+            "devServerTarget": "angpwa:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angpwa:serve:production"
+            }
+          }
+        }
+      }
+    }},
+  "defaultProject": "angpwa"
 }
