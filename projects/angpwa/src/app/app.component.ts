@@ -9,6 +9,7 @@ import { Component, HostListener } from '@angular/core';
 
 export class AppComponent {
   title = 'angpwa';
+  isSideMenuHidden = true;
   deferredPrompt: any = undefined;
   canInstallApp = false;
 
