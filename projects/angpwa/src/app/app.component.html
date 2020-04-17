@@ -1,18 +1,2 @@
-<div class="top-bar">
-    <button (click)="installApp()" [hidden]="!canInstallApp">Add to home screen</button>
-    <button (click)="isSideMenuHidden = !isSideMenuHidden">Show menu</button>
-</div>
 
-<div class="side-menu-container" >
-    <div class="side-menu" [hidden]="isSideMenuHidden">
-        <nav>
-            <ul>
-              <li><a routerLink="copycats/powerhouse">Powerhouse</a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="content">
-        <router-outlet></router-outlet>
-    </div>
-</div>
-
+<router-outlet></router-outlet>
