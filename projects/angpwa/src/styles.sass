@@ -1,6 +1,18 @@
 @import 'assets/global-variables'
 @import 'assets/colors'
 
+@mixin background-gradient
+    background-image: linear-gradient(90deg, transparent 15em, rgba(0, 0, 0, 0.1) 30em, transparent 45em)
+    //background-image: linear-gradient(90deg, red 15em, black 30em, red 45em)
+    background-size: 45em
+    background-position: 0
+
+@keyframes slide-background
+    from
+        background-position: 0
+    to
+        background-position: 45em
+            
 
 .light-theme
     html, body
@@ -74,6 +86,7 @@ b, strong
             width: 15em
             text-align: center
             a
+                @include background-gradient
                 font-family: $font-secondary
                 display: inline-block
                 padding: 1em 0
@@ -82,10 +95,5 @@ b, strong
                 font-size: $text-lg
                 text-decoration: none
                 letter-spacing: 0.2em
-                transition: background .2s ease
-                background: transparent
                 &:hover
-                    background: rgba(0, 0, 0, 0.1)
-                    transition: background .2s ease
-
-
+                    animation: slide-background 1s infinite linear
