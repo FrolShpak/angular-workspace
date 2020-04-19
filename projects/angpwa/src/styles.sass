@@ -1,6 +1,7 @@
 @import 'assets/global-variables'
 @import 'assets/colors'
 
+
 .light-theme
     html, body
         background: $lt-clr-background
@@ -73,13 +74,18 @@ b, strong
             width: 15em
             text-align: center
             a
+                font-family: $font-secondary
                 display: inline-block
                 padding: 1em 0
                 width: 100%
                 height: 100%
-                font-size:$text-lg
+                font-size: $text-lg
                 text-decoration: none
-                letter-spacing: 0.1em
+                letter-spacing: 0.2em
+                transition: background .2s ease
+                background: transparent
                 &:hover
                     background: rgba(0, 0, 0, 0.1)
+                    transition: background .2s ease
+
 
