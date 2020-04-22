@@ -8,7 +8,7 @@ import { House } from 'projects/angpwa/src/app/shared/models/copycats/powerhouse
 })
 export class PowerhouseApiService {
 
-  private housesUrl = 'api/houses'; 
+  private housesUrl = 'api/houses'; //real would be api/copycats/houses/
 
   constructor(
     private http: HttpClient) { }

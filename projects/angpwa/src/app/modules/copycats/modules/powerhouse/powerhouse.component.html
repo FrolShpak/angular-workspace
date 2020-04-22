@@ -1,4 +1,7 @@
-<h1>Copycat of Powerhouse</h1>
-<div *ngFor="let house of houses">
-    <img [src]="house.imageSource">
+<div class="flex-rows houses-rows">
+    <div class="flex-columns houses-column" *ngFor="let subh of houses">
+        <div class="house-image-container"  alt="house.name" *ngFor="let house of subh">
+            <img class="house-image" [src]="house.imageUrl">
+        </div>
+    </div>
 </div>
