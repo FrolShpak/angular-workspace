@@ -4,6 +4,7 @@ export class House {
         public id:number = 0,
         public name:string = '',
         public imageUrl:string = '',
+        public imageIsSquare = false,
         public links: {} = {}
     ){}
 }

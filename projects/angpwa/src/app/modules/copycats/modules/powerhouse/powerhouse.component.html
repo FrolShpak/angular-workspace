@@ -1,7 +1,4 @@
-<div class="flex-rows houses-rows">
-    <div class="flex-columns houses-column" *ngFor="let subh of houses">
-        <div class="house-image-container"  alt="house.name" *ngFor="let house of subh">
-            <img class="house-image" [src]="house.imageUrl">
-        </div>
+<div class="flex-columns houses">
+        <div class="house-image" *ngFor="let house of houses" [style.backgroundImage]="'url('+house.imageUrl+')'" [style.height]="house.imageIsSquare ? '10em': '15em'">
     </div>
 </div>
